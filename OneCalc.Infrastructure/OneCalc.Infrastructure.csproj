@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OneCalc.Domail\OneCalc.Domain.csproj" />
+    <ProjectReference Include="..\OneCalc.Domain\OneCalc.Domain.csproj" />
   </ItemGroup>
 
 </Project>

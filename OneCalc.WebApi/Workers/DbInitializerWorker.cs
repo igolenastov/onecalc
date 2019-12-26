@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OneCalc.Domain.AppSettings;
 using OneCalc.Domain.Entities;
