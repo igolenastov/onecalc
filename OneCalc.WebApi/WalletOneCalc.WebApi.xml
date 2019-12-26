@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OneCalc.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:OneCalc.WebApi.Controllers.Calculate.V1.CalculateController">
+            <summary>
+            Взаимодействие с данными пользователя
+            </summary>
+        </member>
+        <member name="M:OneCalc.WebApi.Controllers.Calculate.V1.CalculateController.#ctor(OneCalc.Domain.Validators.IOperationValidate,OneCalc.Domain.Services.ICalculateService)">
+            <summary>
+            
+            </summary>
+            <param name="operationValidate"></param>
+            <param name="calculateService"></param>
+        </member>
+        <member name="M:OneCalc.WebApi.Controllers.Calculate.V1.CalculateController.Execute(OneCalc.WebApi.Controllers.Calculate.V1.Requests.CalcRequest)">
+            <summary>
+            Получение токена зарегистрированного пользователя
+            </summary>
+            <param name="model">JSON строка с параметрами</param>
+            <returns></returns>
+        </member>
+        <member name="P:OneCalc.WebApi.Controllers.Calculate.V1.Requests.CalcRequest.Calculate">
+            <summary>
+            Email пользователя
+            </summary>
+        </member>
+        <member name="T:OneCalc.WebApi.Controllers.Users.V1.Requests.AuthenticateRequest">
+            <summary>
+            Запрос на авторизацию пользователя
+            </summary>
+        </member>
+        <member name="P:OneCalc.WebApi.Controllers.Users.V1.Requests.AuthenticateRequest.Email">
+            <summary>
+            Email пользователя
+            </summary>
+        </member>
+        <member name="P:OneCalc.WebApi.Controllers.Users.V1.Requests.AuthenticateRequest.Password">
+            <summary>
+            Пароль пользователя
+            </summary>
+        </member>
+        <member name="T:OneCalc.WebApi.Controllers.Users.V1.Requests.CreateRequest">
+            <summary>
+            Запрос на создание пользователя
+            </summary>
+        </member>
+        <member name="P:OneCalc.WebApi.Controllers.Users.V1.Requests.CreateRequest.Operations">
+            <summary>
+            Поддерживаемые операция для пользователя (обязательно хотя бы одна операция), формат - div|mul|plus|minus
+            </summary>
+        </member>
+        <member name="T:OneCalc.WebApi.Controllers.Users.V1.UsersController">
+            <summary>
+            Взаимодействие с данными пользователя
+            </summary>
+        </member>
+        <member name="M:OneCalc.WebApi.Controllers.Users.V1.UsersController.#ctor(Microsoft.AspNetCore.Identity.UserManager{OneCalc.Domain.Entities.ApplicationUser},OneCalc.Domain.Services.IJwtService,OneCalc.Domain.Queries.IUserQuery)">
+            <summary>
+            
+            </summary>
+            <param name="userManager"></param>
+            <param name="jwtServices"></param>
+            <param name="userQuery"></param>
+        </member>
+        <member name="M:OneCalc.WebApi.Controllers.Users.V1.UsersController.Token(OneCalc.WebApi.Controllers.Users.V1.Requests.AuthenticateRequest)">
+            <summary>
+            Получение токена зарегистрированного пользователя
+            </summary>
+            <param name="model">JSON строка с параметрами</param>
+            <returns></returns>
+        </member>
+        <member name="M:OneCalc.WebApi.Controllers.Users.V1.UsersController.Create(OneCalc.WebApi.Controllers.Users.V1.Requests.CreateRequest)">
+            <summary>
+            Регистрация пользователя
+            </summary>
+            <param name="model">JSON строка с параметрами</param>
+            <returns></returns>
+        </member>
+        <member name="M:OneCalc.WebApi.Controllers.Users.V1.UsersController.Info">
+            <summary>
+            Получение информации о пользователе
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OneCalc.WebApi.Controllers.Users.V1.UsersController.GetAll">
+            <summary>
+            Возвращает всех пользователей
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OneCalc.WebApi.Exceptions.BadRequestException">
+            <summary>
+            Для формирования сообщения при ошибках на сайте
+            </summary>
+        </member>
+        <member name="M:OneCalc.WebApi.Extensions.ExceptionMiddlewareExtension.ConfigureExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            При ошибках сервера всегда отдаем 200 ответ
+            </summary>
+            <param name="app"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="T:OneCalc.WebApi.Initialize.DbMigrationFactory">
+            <summary>
+            Для создания миграций
+            </summary>
+        </member>
+        <member name="M:OneCalc.WebApi.Initialize.DbMigrationFactory.CreateDbContext(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OneCalc.WebApi.Workers.DbInitializerWorker">
+            <summary>
+            Воркер для автоматической миграции БД
+            </summary>
+        </member>
+        <member name="M:OneCalc.WebApi.Workers.DbInitializerWorker.#ctor(Microsoft.Extensions.DependencyInjection.IServiceScope)">
+            <summary>
+            Воркер для автоматической миграции БД
+            </summary>
+            <param name="serviceScope"></param>
+        </member>
+        <member name="M:OneCalc.WebApi.Workers.DbInitializerWorker.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            Проведение автоматической миграции в БД
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OneCalc.WebApi.Workers.DbInitializerWorker.MigrateAsync(OneCalc.Infrastructure.DataAccess.ApplicationDbContext,System.Threading.CancellationToken)">
+            <summary>
+            Миграция
+            </summary>
+            <param name="context"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OneCalc.WebApi.Workers.DbInitializerWorker.InitRolesAsync(OneCalc.Infrastructure.DataAccess.ApplicationDbContext,System.Threading.CancellationToken)">
+            <summary>
+            Добавляем роли в БД
+            </summary>
+            <param name="context"></param>
+            <param name="cancellationToken"></param>
+        </member>
+        <member name="M:OneCalc.WebApi.Workers.DbInitializerWorker.InitRootAdmin(OneCalc.Infrastructure.DataAccess.ApplicationDbContext,System.Threading.CancellationToken)">
+            <summary>
+            Добавляем админа в систему
+            </summary>
+            <param name="context"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OneCalc.WebApi.Workers.DbInitializerWorker.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
