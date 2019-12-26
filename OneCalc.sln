@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneCalc.WebApi", "OneCalc.WebApi\OneCalc.WebApi.csproj", "{B3C995FB-3381-496D-9C42-45B5682C373C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneCalc.Domain", "OneCalc.Domail\OneCalc.Domain.csproj", "{CA73BDE5-AD75-4D74-997B-9CC1CCCD32C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneCalc.Domain", "OneCalc.Domain\OneCalc.Domain.csproj", "{CA73BDE5-AD75-4D74-997B-9CC1CCCD32C2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneCalc.Infrastructure", "OneCalc.Infrastructure\OneCalc.Infrastructure.csproj", "{C747E932-C130-4F59-ACAF-58EEBD0CDDE1}"
 EndProject
