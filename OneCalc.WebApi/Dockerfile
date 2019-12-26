@@ -7,7 +7,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster AS build
 WORKDIR /src
 COPY ["OneCalc.WebApi/OneCalc.WebApi.csproj", "OneCalc.WebApi/"]
 COPY ["OneCalc.Infrastructure/OneCalc.Infrastructure.csproj", "OneCalc.Infrastructure/"]
-COPY ["OneCalc.Domail/OneCalc.Domain.csproj", "OneCalc.Domail/"]
+COPY ["OneCalc.Domain/OneCalc.Domain.csproj", "OneCalc.Domain/"]
 RUN dotnet restore "OneCalc.WebApi/OneCalc.WebApi.csproj"
 COPY . .
 WORKDIR "/src/OneCalc.WebApi"

@@ -6,6 +6,9 @@ services:
     build:
       context: .
       dockerfile: OneCalc.WebApi/Dockerfile
+    networks:
+      - postgres
+    restart: unless-stopped
 
   postgres:
     container_name: calc_one_postgres_container

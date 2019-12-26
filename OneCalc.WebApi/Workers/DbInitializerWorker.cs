@@ -23,6 +23,8 @@ namespace OneCalc.WebApi.Workers
     /// </summary>
     public class DbInitializerWorker: IHostedService
     {
+        private readonly ILogger _logger;
+
         private readonly IServiceProvider _serviceProvider;
         private IServiceScope _serviceScope;
 
@@ -30,9 +32,11 @@ namespace OneCalc.WebApi.Workers
         /// Воркер для автоматической миграции БД
         /// </summary>
         /// <param name="serviceProvider"></param>
-        public DbInitializerWorker(IServiceProvider serviceProvider)
+        /// <param name="logger"></param>
+        public DbInitializerWorker(IServiceProvider serviceProvider, ILogger<DbInitializerWorker> logger)
         {
             _serviceProvider = serviceProvider;
+            _logger = logger;
         }
 
         /// <summary>
@@ -45,6 +49,9 @@ namespace OneCalc.WebApi.Workers
             using (_serviceScope = _serviceProvider.CreateScope())
             {
                 var context = _serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
+
+                //var c = context.Database.GetDbConnection();
+                //_logger.LogInformation(c.ConnectionString);
 
                 await MigrateAsync(context, cancellationToken);
 
