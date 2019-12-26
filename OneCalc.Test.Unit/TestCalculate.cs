@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentAssertions;
-using Microsoft.Extensions.Hosting;
+﻿using FluentAssertions;
 using NUnit.Framework;
 using OneCalc.Domain.Entities;
 using OneCalc.Domain.Services;
 using OneCalc.Infrastructure.DataAccess;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace OneCalc.Test.Unit
 {

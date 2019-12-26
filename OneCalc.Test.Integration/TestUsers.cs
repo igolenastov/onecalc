@@ -2,6 +2,7 @@
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using FluentAssertions;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 using OneCalc.Domain.Entities;

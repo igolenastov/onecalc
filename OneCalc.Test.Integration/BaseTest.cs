@@ -26,7 +26,7 @@ namespace OneCalc.Test.Integration
         public async Task Setup()
         {
             var builder = new WebHostBuilder()
-                .UseEnvironment(EnvironmentName.Development)
+                .UseEnvironment("Test")
                 .UseStartup<Startup>();
 
             // Arrange
